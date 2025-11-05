@@ -1,0 +1,43 @@
+/* Enter your custom styles here */
+.customUnderline {
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 5px; 
+    display: inline-block; /* Ensures the underline adapts to the text width */
+}
+.buttonSpacing {
+    margin-right: 20px; /* Adjust the spacing value as needed */
+}
+
+#buttonBox .buttonSpacing:last-child {
+    margin-right: 0;
+}
+.largeText {
+    font-size: 16px; /* You can adjust the size as per your requirement */
+    font-weight: bold; /* Optional: Make the text bold */
+}
+.labelWidth {
+    width: 200px; /* Adjust the width as needed */
+}
+.bold {
+    font-weight:bold;
+}
+
+.textWidth {
+    width: 300px; /* Adjust the width as needed */
+}
+
+.customVBox {
+    border: 2px solid black; /* Add border with desired width and color */
+    padding: 10px; /* Optional: Add some padding inside the VBox */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.customSubVBox {
+    border: 1px solid rgb(128, 125, 125); /* Add border with desired width and color */
+    padding: 10px; /* Optional: Add some padding inside the VBox */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.customSpacing{
+    margin-bottom: 10px;
+}

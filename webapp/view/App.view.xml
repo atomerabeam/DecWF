@@ -1,0 +1,289 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    controllerName="zdecwfapp.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <fb:FilterBar
+                id="filterbar"
+                persistencyKey="myPersKey"
+                useToolbar="false"
+                search=".onFilter"
+                filterChange=".onFilterChange"
+                afterVariantLoad=".onAfterVariantLoad"
+            >
+             <SearchField
+                                width="100%"
+                                id="idSearchField"
+                                search="onSearch"
+                            />
+                <fb:filterGroupItems>
+                    <fb:FilterGroupItem
+                        id="IDFGB1"
+                        name="employeeNoColumn"
+                        label="{i18n>employeeNoColumn}"
+                        groupName="Group1"
+                        visibleInFilterBar="true"
+                    >
+                    
+                        <fb:control>
+                            <!-- <MultiInput
+                                id="idFilEmpNo"
+                                tokens="{path:'oModelD>/EMPNO',templateShareable:false}"
+                                showSuggestion="true"
+                                maxTokens="100"
+                                placeholder="{i18n>employeeNoColumn}"
+                                showValueHelp="true"
+                                tokenUpdate="onTokenUpdate"
+                                liveChange="onLiveChange"
+                            >
+                                <tokens>
+                                    <Token key="{oModelD>key}" text="{oModelD>text}"/>
+                                </tokens>
+                            </MultiInput> -->
+                            <Input id="idFilEmpNo" placeholder="{i18n>employeeNoColumn}"/>
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem
+                        id="IDFGB2"
+                        name="FY"
+                        label="{i18n>FY}"
+                        groupName="Group1"
+                        visibleInFilterBar="true"
+                        class="sapUiLargeMarginTop"
+                    >
+                        <fb:control>
+                            <!-- <Input
+                                id="idFilFiscalYear"
+                                placeholder="{i18n>FY}"
+                            /> -->
+                            
+                        
+
+                        <DatePicker
+					id="DP11"
+					value="{
+						'path': 'oModelD>/GJAHR',
+						'type': 'sap.ui.model.type.Date',
+						'formatOptions': {
+							'pattern': 'yyyy'
+						}
+                        
+					}"
+					change="handleChange"/>
+                    </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem
+                        id="IDFGB3"
+                        name="Status"
+                        label="{i18n>Status}"
+                        groupName="Group1"
+                        visibleInFilterBar="true"
+                    >
+                        <fb:control>
+                            <ComboBox
+                                id="idFilStatus"
+                                placeholder="{i18n>Status}"
+                            >
+                                <items>
+                                    <core:Item
+                                        key="1"
+                                        text="{i18n>Completed}"
+                                    />
+                                    <core:Item
+                                        key="2"
+                                        text="{i18n>Pending}"
+                                    />
+                                </items>
+                            </ComboBox>
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                </fb:filterGroupItems>
+            </fb:FilterBar>
+
+            <Table
+                id="idEmployeeList"
+                inset="false"
+                items="{
+                           path: 'aModel>/EmployeeList',
+                           sorter: {
+                               path: 'PERNR'
+                           }
+                       }"
+            >
+                <headerToolbar>
+                    <OverflowToolbar id="idGenOverflowToolbar">
+                        <content>
+                            <Title
+                                id="idTitle"
+                                text="{i18n>employeeListTableHeader}"
+                                level="H2"
+                            />
+                            <ToolbarSpacer id="idToolbarSpacer" />                           
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column
+                        id="idColReqId"
+                        width="12em"
+                    >
+                        <Text
+                            id="_IDGenText7"
+                            text="{i18n>idTextReqId}"
+                        />
+                    </Column>
+                    <Column
+                        id="idColEmpNo"
+                        width="12em"
+                    >
+                        <Text
+                            id="idTextEmpNo"
+                            text="{i18n>employeeNoColumn}"
+                        />
+                    </Column>
+                    <Column
+                        id="idColEmpName"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="idTextEmpName"
+                            text="{i18n>employeeNameColumn}"
+                        />
+                    </Column>
+                    <!-- <Column id="_IDGenColumn4" minScreenWidth="Desktop" demandPopin="true">
+                            <Text id="_IDGenText10" text="{i18n>mappleTreeEntityColumn}" />
+                        </Column> -->
+                    <Column
+                        id="idColDep"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="idTextDep"
+                            text="{i18n>departmentColumn}"
+                        />
+                    </Column>
+
+                    <Column
+                        id="idColFY"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="idTextFY"
+                            text="{i18n>FY}"
+                        />
+                    </Column>
+
+                    <Column
+                        id="idColCompEnt"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="idTextCompEnt"
+                            text="{i18n>CompanyEntity}"
+                        />
+                    </Column>
+
+                    <Column
+                        id="idStatus"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="idTextStatus"
+                            text="{i18n>Status}"
+                        />
+                    </Column>
+
+                    <Column
+                        id="idPendingWith"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="idTextPendingWith"
+                            text="{i18n>PendingWith}"
+                        />
+                    </Column>
+
+                    <Column
+                        id="idBusUnit"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="idTextBusUnit"
+                            text="{i18n>BusUnit}"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        id="idColListItem"
+                        vAlign="Middle"
+                        type="Navigation"
+                        press="onRowPress"
+                    >
+                        <cells>
+                            <Text
+                                id="idRowWFID"
+                                text="{aModel>WFID}"
+                            />
+                            <Text
+                                id="idRowPERNR"
+                                text="{aModel>PERNR}"
+                            />
+                            <!-- <ObjectIdentifier id="_IDGenObjectIdentifier" 
+                                                  title="{aModel>PERNR}" 
+                                                  text="{aModel>PERNR}"/> -->
+                            <Text
+                                id="idRowENAME"
+                                text="{aModel>ENAME}"
+                            />
+                            <!-- <Text id="_IDGenText36" text="" /> -->
+                            <Text
+                                id="idRow"
+                                text="{aModel>DEPARTMENT}"
+                            />
+                            <Text
+                                id="idRowFiscalYear"
+                                text="{aModel>GJAHR}"
+                            />
+
+                            <Text
+                                id="idRowCompEnt"
+                                text="{aModel>NAMEOFCOMP}"
+                            />
+
+                            <Text
+                                id="idRowStatus"
+                                text="{aModel>STATUS}"
+                            />
+
+                            <Text
+                                id="idRowPendingWith"
+                                text="{aModel>PENDING_WITH}"
+                            />
+                            <Text
+                                id="idRowBusUnit"
+                                text="{aModel>BUSINESSUNIT}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
