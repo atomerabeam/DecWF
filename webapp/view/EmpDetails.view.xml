@@ -378,14 +378,19 @@
                             id="_IDGenRadioButtonGroupCriminalCheck"
                             editable="false"
                             selectedIndex="{= ${formModel>/section2/0/CONVICT} === 'N' ? 0 : 1 }"
+                            width="100%"
                         >
                             <RadioButton
                                 id="_IDGenRadioButton2"
                                 text="{i18n>section2.criminalCheck.noConviction}"
+                                class="wrapRadioButton" 
+                                width="100%"
                             />
                             <RadioButton
                                 id="_IDGenRadioButton3"
                                 text="{i18n>section2.criminalCheck.hasConviction}"
+                                class="wrapRadioButton" 
+                                width="100%"
                             />
                         </RadioButtonGroup>
 
@@ -695,6 +700,7 @@
 
                         <RadioButtonGroup
                             columns="1"
+                            width="100%"
                             id="_IDGenRadioButtonGroupDeclaration"
                             editable="false"
                             selectedIndex="{= ${formModel>/section3/0/MAPLSEC} === 'N' ? 0 : 1 }"
@@ -702,10 +708,14 @@
                             <RadioButton
                                 id="_IDGenRadioButtonDeclaration1"
                                 text="{i18n>radioButtonNoSecurities}"
+                                class="wrapRadioButton" 
+                             width="100%"
                             />
                             <RadioButton
                                 id="_IDGenRadioButtonDeclaration2"
                                 text="{i18n>radioButtonHaveSecurities}"
+                                class="wrapRadioButton" 
+                             width="100%"
                             />
                         </RadioButtonGroup>
                         <HBox>
@@ -753,7 +763,7 @@
                                     <Column id="_IDGenColumn13">
                                         <Text
                                             id="_IDGenText29"
-                                            text="{i18n>remarks}"
+                                            text="{i18n>remarks1}"
                                         />
                                     </Column>
                                 </columns>
@@ -994,17 +1004,25 @@
                         <!-- Radio Button Group for Declarations -->
                         <RadioButtonGroup
                             columns="1"
+                            width="100%"
                             id="_IDGenRadioButtonGroupDeclaration4"
                             editable="false"
                             selectedIndex="{= ${formModel>/section4/0/DECLRATION} === 'N' ? 0 : 1 }"
+                        
                         >
                             <RadioButton
                                 id="_IDGenRadioButtonDeclaration4"
                                 text="{i18n>section4.radio1}"
+                                class="wrapRadioButton" 
+                             width="100%"
+                        
                             />
                             <RadioButton
                                 id="_IDGenRadioButtonDeclaration5"
                                 text="{i18n>section4.radio2}"
+                                class="wrapRadioButton" 
+                             width="100%"
+                    
                             />
                         </RadioButtonGroup>
                         <VBox layoutData="{m:FlexItemData, growFactor: 0}">
@@ -1037,34 +1055,38 @@
                                             text="{i18n>section4.column.ownership}"
                                         />
                                     </Column>
-                                    <Column id="_IDGenColumnShares">
-                                        <Text
-                                            id="_IDGenTextShares"
-                                            text="{i18n>section4.column.shares}"
-                                        />
-                                    </Column>
+                                    <Column  id="_IDGenColumnShares" visible="false"   > 
+                                       <Text 
+                                            id="_IDGenTextShares" 
+                                            text="{i18n>section4.column.shares}" 
+                                            visible="false"
+                                        /> 
+                                    </Column> 
                                     <Column id="_IDGenColumnPercent">
                                         <Text
                                             id="_IDGenTextPercent"
                                             text="{i18n>section4.column.percentOwnership}"
                                         />
                                     </Column>
-                                    <Column id="_IDGenColumnApproval">
+                                    <Column id="_IDGenColumnApproval" visible="false">
                                         <Text
                                             id="_IDGenTextApproval"
                                             text="{i18n>section4.column.approval}"
+                                            visible="false"
                                         />
                                     </Column>
-                                    <Column id="_IDGenColumnTransactions">
+                                    <Column id="_IDGenColumnTransactions" visible="false">
                                         <Text
                                             id="_IDGenTextTransactions"
                                             text="{i18n>section4.column.transactions}"
+                                            visible="false"
                                         />
                                     </Column>
-                                    <Column id="_IDGenColumnConflict">
+                                    <Column id="_IDGenColumnConflict" visible="false">
                                         <Text
                                             id="_IDGenTextConflict"
                                             text="{i18n>section4.column.conflict}"
+                                            visible="false"
                                         />
                                     </Column>
                                     <Column id="_IDGenColumnRemarks">
@@ -1333,6 +1355,7 @@
                             text="{i18n>section5.radioButton1}"
                             selected="{= ${formModel>/section5/0/NOTBANKRUPT} === 'X'}"
                             editable="false"
+wrapping="true"
                         />
                         <CheckBox
                             id="_IDGenCheckBoxDeclaration7"
@@ -1653,12 +1676,17 @@
                                     id="_IDGenRadioButton6"
                                     text="{i18n>section6.radioButton1}"
                                     editable="false"
+                                     class="wrapRadioButton" 
+width="100%"
+
                                 />
                                 <RadioButton
                                     id="_IDGenRadioButton7"
                                     text="{i18n>section6.radioButton2}"
                                     wrapping="true"
                                     editable="false"
+                                    class="wrapRadioButton" 
+width="100%"
                                 />
                             </RadioButtonGroup>
                         </VBox>
@@ -1951,6 +1979,7 @@
                             id="_IDGenRadioGroupOutsideDirectorship"
                             selectedIndex="{= ${formModel>/section7/0/DECLRATION} === 'Y' ? 1 : 0 }"
                             editable="false"
+                            width="100%"
                         >
                             <RadioButton
                                 id="_IDGenRadioButtonSelf"
@@ -1959,6 +1988,8 @@
                             <RadioButton
                                 id="_IDGenRadioButtonInvolvement"
                                 text="{i18n>radioInvolvement}"
+                                class="wrapRadioButton" 
+width="100%"
                             />
                         </RadioButtonGroup>
                         <VBox layoutData="{m:FlexItemData, growFactor: 0}">
@@ -2001,22 +2032,25 @@
                                             text="{i18n>ownershipDetails}"
                                         />
                                     </Column>
-                                    <Column id="_IDGenColumn18">
+                                    <Column id="_IDGenColumn18" visible="false">
                                         <Text
                                             id="_IDGenText31"
                                             text="{i18n>approvalSelf}"
+                                            visible="false"
                                         />
                                     </Column>
-                                    <Column id="_IDGenColumn19">
+                                    <Column id="_IDGenColumn19" visible="false">
                                         <Text
                                             id="_IDGenText32"
                                             text="{i18n>businessTransactions}"
+                                            visible="false"
                                         />
                                     </Column>
-                                    <Column id="_IDGenColumn20">
+                                    <Column id="_IDGenColumn20" visible="false">
                                         <Text
                                             id="_IDGenText33"
                                             text="{i18n>conflict}"
+                                            visible="false"
                                         />
                                     </Column>
                                     <Column id="_IDGenColumn21">
@@ -2755,14 +2789,20 @@
                             id="Tog_IDGenRadioButtonGroupCriminalCheck"
                             editable="false"
                             selectedIndex="{= ${formModel>/section2/0/CONVICT} === 'N' ? 0 : 1 }"
+                            width="100%"
                         >
                             <RadioButton
                                 id="Tog_IDGenRadioButton2"
                                 text="{i18n>section2.criminalCheck.noConviction}"
+                                class="wrapRadioButton" 
+
+                             width="100%"
                             />
                             <RadioButton
                                 id="Tog_IDGenRadioButton3"
                                 text="{i18n>section2.criminalCheck.hasConviction}"
+                            class="wrapRadioButton" 
+                             width="100%"
                             />
                         </RadioButtonGroup>
 
@@ -3061,6 +3101,7 @@
 
                         <RadioButtonGroup
                             columns="1"
+                            width="100%"
                             id="Tog_IDGenRadioButtonGroupDeclaration"
                             editable="false"
                             selectedIndex="{= ${formModel>/section3/0/MAPLSEC} === 'N' ? 0 : 1 }"
@@ -3068,10 +3109,14 @@
                             <RadioButton
                                 id="Tog_IDGenRadioButtonDeclaration1"
                                 text="{i18n>radioButtonNoSecurities}"
+                                class="wrapRadioButton" 
+                             width="100%"
                             />
                             <RadioButton
                                 id="Tog_IDGenRadioButtonDeclaration2"
                                 text="{i18n>radioButtonHaveSecurities}"
+                                class="wrapRadioButton" 
+                             width="100%"
                             />
                         </RadioButtonGroup>
                         <HBox>
@@ -3119,7 +3164,7 @@
                                     <Column id="Tog_IDGenColumn13">
                                         <Text
                                             id="Tog_IDGenText29"
-                                            text="{i18n>remarks}"
+                                            text="{i18n>remarks1}"
                                         />
                                     </Column>
                                 </columns>
@@ -3337,17 +3382,23 @@
                         <!-- Radio Button Group for Declarations -->
                         <RadioButtonGroup
                             columns="1"
+                            width="100%"
                             id="Tog_IDGenRadioButtonGroupDeclaration4"
                             editable="false"
                             selectedIndex="{= ${formModel>/section4/0/DECLRATION} === 'N' ? 0 : 1 }"
                         >
                             <RadioButton
                                 id="Tog_IDGenRadioButtonDeclaration4"
-                                text="{i18n>section4.radio1}"
+                                text="{i18n>section4.radio1}  "
+                              class="wrapRadioButton" 
+                             width="100%"
                             />
                             <RadioButton
                                 id="Tog_IDGenRadioButtonDeclaration5"
                                 text="{i18n>section4.radio2}"
+                                class="wrapRadioButton" 
+                             width="100%"
+                                
                             />
                         </RadioButtonGroup>
                         <VBox layoutData="{m:FlexItemData, growFactor: 0}">
@@ -3381,10 +3432,11 @@
                                             text="{i18n>section4.column.ownership}"
                                         />
                                     </Column>
-                                    <Column id="Tog_IDGenColumnShares">
+                                    <Column id="Tog_IDGenColumnShares" visible="false">
                                         <Text
                                             id="Tog_IDGenTextShares"
                                             text="{i18n>section4.column.shares}"
+                                            visible="false"
                                         />
                                     </Column>
                                     <Column id="Tog_IDGenColumnPercent">
@@ -3393,22 +3445,25 @@
                                             text="{i18n>section4.column.percentOwnership}"
                                         />
                                     </Column>
-                                    <Column id="Tog_IDGenColumnApproval">
+                                    <Column id="Tog_IDGenColumnApproval" visible="false">
                                         <Text
                                             id="Tog_IDGenTextApproval"
                                             text="{i18n>section4.column.approval}"
+                                            visible="false"
                                         />
                                     </Column>
-                                    <Column id="Tog_IDGenColumnTransactions">
+                                    <Column id="Tog_IDGenColumnTransactions" visible="false">
                                         <Text
                                             id="Tog_IDGenTextTransactions"
                                             text="{i18n>section4.column.transactions}"
+                                            visible="false"
                                         />
                                     </Column>
-                                    <Column id="Tog_IDGenColumnConflict">
+                                    <Column id="Tog_IDGenColumnConflict" visible="false">
                                         <Text
                                             id="Tog_IDGenTextConflict"
                                             text="{i18n>section4.column.conflict}"
+                                            visible="false"
                                         />
                                     </Column>
                                     <Column id="Tog_IDGenColumnRemarks">
@@ -3472,10 +3527,8 @@
                                     </ColumnListItem>
                                 </items>
                             </Table>
-                            <Text text="{i18n>section4.indication}" class="sapUiTinyMarginTopBottom" />
-                        </VBox>
-                        <VBox class="sapUiSmallMarginTop">
-                            <Text text="{i18n>section4.indicateYesorNo}" />
+                          <Text id= "section4.indicateYesorNo" text="{i18n>section4.indicateYesorNo}" />
+                      
                         </VBox>
                         <VBox layoutData="{m:FlexItemData, growFactor: 0}">
                             <Text text=" " />
@@ -3499,7 +3552,7 @@
                             />
                         </HBox>
                     </VBox>
-
+<Text id= "section4.indication" text="{i18n>section4.indication}" /> 
                     <!-- Section4Remarks -->
                     <VBox
                         visible="{oModelVisibility>/bTogSectionVis4}"
@@ -3659,6 +3712,7 @@
                             text="{i18n>section5.radioButton1}"
                             selected="{= ${formModel>/section5/0/NOTBANKRUPT} === 'X'}"
                             editable="false"
+wrapping="true"
                         />
                         <CheckBox
                             id="Tog_IDGenCheckBoxDeclaration7"
@@ -3950,17 +4004,22 @@
                                 id="TogdeclarationRadioGroup6"
                                 columns="1"
                                 selectedIndex="{= ${formModel>/section6/0/DECLRATION} === 'Y' ? 1 : 0 }"
+                                width="100%"
                             >
                                 <RadioButton
                                     id="Tog_IDGenRadioButton6"
                                     text="{i18n>section6.radioButton1}"
                                     editable="false"
+                                    class="wrapRadioButton" 
+width="100%"
                                 />
                                 <RadioButton
                                     id="Tog_IDGenRadioButton7"
                                     text="{i18n>section6.radioButton2}"
                                     wrapping="true"
                                     editable="false"
+                                     class="wrapRadioButton" 
+width="100%"
                                 />
                             </RadioButtonGroup>
                         </VBox>
@@ -4230,6 +4289,7 @@
                             id="Tog_IDGenRadioGroupOutsideDirectorship"
                             selectedIndex="{= ${formModel>/section7/0/DECLRATION} === 'Y' ? 1 : 0 }"
                             editable="false"
+                            width="100%"
                         >
                             <RadioButton
                                 id="Tog_IDGenRadioButtonSelf"
@@ -4238,6 +4298,8 @@
                             <RadioButton
                                 id="Tog_IDGenRadioButtonInvolvement"
                                 text="{i18n>radioInvolvement}"
+                                class="wrapRadioButton" 
+width="100%"
                             />
                         </RadioButtonGroup>
                         <VBox layoutData="{m:FlexItemData, growFactor: 0}">
@@ -4279,22 +4341,25 @@
                                             text="{i18n>ownershipDetails}"
                                         />
                                     </Column>
-                                    <Column id="Tog_IDGenColumn18">
+                                    <Column id="Tog_IDGenColumn18" visible="false">
                                         <Text
                                             id="Tog_IDGenText31"
                                             text="{i18n>approvalSelf}"
+                                            visible="false"
                                         />
                                     </Column>
-                                    <Column id="Tog_IDGenColumn19">
+                                    <Column id="Tog_IDGenColumn19" visible="false">
                                         <Text
                                             id="Tog_IDGenText32"
                                             text="{i18n>businessTransactions}"
+                                            visible="false"
                                         />
                                     </Column>
-                                    <Column id="Tog_IDGenColumn20">
+                                    <Column id="Tog_IDGenColumn20" visible="false">
                                         <Text
                                             id="Tog_IDGenText33"
                                             text="{i18n>conflict}"
+                                            visible="false"
                                         />
                                     </Column>
                                     <Column id="Tog_IDGenColumn21">

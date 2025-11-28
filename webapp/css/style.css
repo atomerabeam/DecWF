@@ -1,4 +1,36 @@
 /* Enter your custom styles here */
+.longRadioButtonText .sapMRbBLabel {
+ white-space: normal !important ;
+ word-break: break-word;
+ overflow-wrap: anywhere;
+ display: inline-block; 
+ width: auto;     
+}
+/* Added by Mahesh K
+/* Enable wrapping for long RadioButton text */
+.wrapRadioButton .sapMRbBLabel {
+white-space: normal !important; /* Allow multi-line */
+word-break: break-word !important;
+overflow-wrap: anywhere !important;
+display: inline-block !important;
+line-height: 1.2     !important;
+vertical-align: top;
+max-width: calc(100% - 2rem); /* Leave space for the radio circle */
+}
+.wrapRadioButton .sapMRbB {
+margin-bottom: 8px;
+
+}
+/* Make it responsive */
+@media (max-width: 768px) {
+.wrapRadioButton .sapMRbBLabel {
+font-size: 16px;
+margin-bottom: 16px;
+}
+}
+
+
+*/
 .customUnderline {
     border-bottom: 1px solid #ccc; 
     padding-bottom: 5px; 
